@@ -1,9 +1,6 @@
 # typed: strict
 # frozen_string_literal: true
 
-require "phlex"
-require_relative "layout"
-
 module Views
   module Components
     class Home < Phlex::HTML

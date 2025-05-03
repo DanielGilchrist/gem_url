@@ -1,7 +1,7 @@
 # typed: strict
 # frozen_string_literal: true
 
-require_relative "app"
-
 RubyVM::YJIT.enable
+
+require_relative "app"
 run App

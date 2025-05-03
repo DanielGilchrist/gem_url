@@ -1,27 +1,31 @@
 # typed: strict
 # frozen_string_literal: true
 
-require "phlex"
-require_relative "layout"
-
 module Views
   module Components
     class Result < Phlex::HTML
-      #: (String original_url) -> void
-      def initialize(original_url:)
-        @original_url = original_url
+      #: (Models::URL url, String base_url) -> void
+      def initialize(url:, base_url:)
+        @url = url
+        @base_url = base_url
       end
 
       #: -> void
       def view_template
         render Layout.new do
-          h2 { "Your shortened URL" }
-          p { "Original URL: #{@original_url}" }
-          p { "We'll implement the actual shortening later!" }
+          h2 { "Your shortened URL: #{shortened_url}" }
+          p { "Original URL: #{@url.original_url}" }
           p do
             a(href: "/") { "Shorten another URL" }
           end
         end
+      end
+
+      private
+
+      #: -> String
+      def shortened_url
+        "#{@base_url}/#{@url.short_code}"
       end
     end
   end

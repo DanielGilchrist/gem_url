@@ -20,5 +20,8 @@ Naming/BlockForwarding:
 Style/Documentation:
   Enabled: false
 
+Style/RedundantSelf:
+  Enabled: false
+
 Style/StringLiterals:
   Enabled: false
