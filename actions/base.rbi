@@ -2,7 +2,7 @@
 
 module Actions
   class Base < Sinatra::Base
-    sig { params(component: Phlex::HTML).void }
-    def phlex(component); end
+    sig { params(object: Phlex::HTML).void }
+    def phlex(object); end
   end
 end

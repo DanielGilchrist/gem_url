@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 module Views
-  module Components
+  module Shared
     class Layout < Phlex::HTML
       #: (Models::Flash flash, ?String title) -> void
       def initialize(flash:, title: "GemURL")

@@ -5,6 +5,7 @@ module Actions
   class Shorten < Base
     post "/shorten" do
       original_url = params[:url]
+
       if original_url.blank?
         flash.failure = "URL cannot be blank!"
         return redirect_home
@@ -19,14 +20,14 @@ module Actions
       url = Models::URL.insert(original_url, code)
 
       flash.success = "Successfully shortened your URL!"
-      phlex Views::Components::Result.new(flash:, url:, base_url: request.base_url)
+      phlex Views::Pages::Result.new(flash:, url:, base_url: request.base_url)
     end
 
     private
 
     #: -> String
     def generate_code
-      code = SecureRandom.alphanumeric(10)
+      code = SecureRandom.alphanumeric(5)
       url = Models::URL.find(code)
       return generate_code if url
 

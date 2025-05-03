@@ -11,5 +11,3 @@ class App < Sinatra::Base
   use Actions::Shorten
   use Actions::ShortCode
 end
-
-App.run! if __FILE__ == $PROGRAM_NAME

@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 module Views
-  module Components
+  module Pages
     class Home < Phlex::HTML
       #: (Models::Flash flash, String base_url) -> void
       def initialize(flash:, base_url:)
@@ -12,7 +12,7 @@ module Views
 
       #: -> void
       def view_template
-        render Layout.new(flash: @flash) do
+        render Shared::Layout.new(flash: @flash) do
           div(style: "text-align: center; max-width: 600px; margin: 2rem auto;") do
             h2(style: "font-size: 2.2rem; margin-bottom: 0.5rem;") { "Shorten your URL" }
             p(style: "font-size: 1.1rem; margin-bottom: 1.5rem; color: #aaa;") do
