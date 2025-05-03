@@ -4,7 +4,7 @@
 module Actions
   class Home < Base
     get "/" do
-      phlex Views::Components::Home.new
+      phlex Views::Components::Home.new(flash:)
     end
   end
 end

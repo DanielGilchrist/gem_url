@@ -4,9 +4,14 @@
 module Views
   module Components
     class Home < Phlex::HTML
+      #: (Models::Flash flash) -> void
+      def initialize(flash: @flash)
+        @flash = flash
+      end
+
       #: -> void
       def view_template
-        render Layout.new do
+        render Layout.new(flash: @flash) do
           h2 { "Shorten your URL" }
           p { "Turn long URLs into gems of brevity!" }
 

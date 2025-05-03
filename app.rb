@@ -4,6 +4,8 @@
 require_relative "require"
 
 class App < Sinatra::Base
+  enable :sessions
+
   use Actions::NotFound
   use Actions::Home
   use Actions::Shorten

@@ -6,6 +6,10 @@ module Actions
     helpers Phlex::Sinatra
     set :public_folder, File.join(File.dirname(__FILE__), "public")
 
+    after do
+      clear_flash if request.get? && !request.xhr?
+    end
+
     #: -> void
     def redirect_home
       redirect "/"
@@ -17,6 +21,16 @@ module Actions
       uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
     rescue URI::InvalidURIError
       false
+    end
+
+    #: -> Models::Flash
+    def flash
+      session[:flash] ||= Models::Flash.new
+    end
+
+    #: -> Models::Flash
+    def clear_flash
+      session[:flash] = Models::Flash.new
     end
   end
 end
