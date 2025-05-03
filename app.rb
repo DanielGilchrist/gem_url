@@ -1,4 +1,5 @@
 # typed: strict
+# frozen_string_literal: true
 
 require_relative "require"
 
@@ -12,4 +13,4 @@ class App < Sinatra::Base
   use Actions::Shorten
 end
 
-App.run! if __FILE__ == $0
+App.run! if __FILE__ == $PROGRAM_NAME

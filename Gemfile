@@ -2,14 +2,16 @@
 
 source "https://rubygems.org"
 
-gem "sinatra"
-gem "rackup"
-gem "puma"
-gem "sqlite3"
 gem "phlex"
 gem "phlex-sinatra"
+gem "puma"
+gem "rackup"
+gem "sinatra"
+gem "sqlite3"
 
 group :development do
-  gem "sorbet"
-  gem "tapioca"
+  gem "rubocop", require: false
+  gem "rubocop-sorbet", require: false
+  gem "sorbet", require: false
+  gem "tapioca", require: false
 end
