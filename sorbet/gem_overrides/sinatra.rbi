@@ -11,4 +11,7 @@ class Sinatra::Base
     sig { params(block: T.proc.bind(T.attached_class).void).void }
     def not_found(&block); end
   end
+
+  sig { returns(T::Hash[Symbol, String]) }
+  def params; end
 end
