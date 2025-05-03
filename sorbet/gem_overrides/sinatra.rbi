@@ -7,6 +7,8 @@ class Sinatra::Base
 
     sig { params(path: String, opts: T.untyped, block: T.proc.bind(T.attached_class).void).void }
     def post(path, opts = T.unsafe(nil), &block); end
+
+    sig { params(block: T.proc.bind(T.attached_class).void).void }
+    def not_found(&block); end
   end
 end
-

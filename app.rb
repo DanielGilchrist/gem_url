@@ -4,8 +4,7 @@
 require_relative "require"
 
 class App < Sinatra::Base
-  set :public_folder, File.join(File.dirname(__FILE__), "public")
-
+  use Actions::NotFound
   use Actions::Home
   use Actions::Shorten
   use Actions::ShortCode

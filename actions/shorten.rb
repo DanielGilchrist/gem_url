@@ -5,7 +5,8 @@ module Actions
   class Shorten < Base
     post "/shorten" do
       original_url = params[:url]
-      return 400 if url.blank?
+      return redirect_home if url.blank?
+      return redirect_home unless valid_url?(original_url)
 
       code = generate_code
       url = Models::URL.insert(original_url, code)

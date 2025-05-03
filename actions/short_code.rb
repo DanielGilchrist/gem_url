@@ -5,10 +5,10 @@ module Actions
   class ShortCode < Base
     get "/:short_code" do
       code = params[:short_code]
-      return 400 if code.blank?
+      return redirect_home if code.blank?
 
       url = Models::URL.find(code)
-      return 404 if url.nil?
+      return redirect_home if url.nil?
 
       redirect url.original_url
     end
