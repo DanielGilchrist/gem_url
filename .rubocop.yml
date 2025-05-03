@@ -8,6 +8,9 @@ Lint/MissingSuper:
   AllowedParentClasses: [Phlex::HTML]
 
 ### Disabled ###
+Layout/LineLength:
+  Enabled: false
+
 Lint/UnusedMethodArgument:
   Enabled: false
 
