@@ -28,7 +28,7 @@ module Actions
       session[:flash] ||= Models::Flash.new
     end
 
-    #: -> Models::Flash
+    #: -> void
     def clear_flash
       session[:flash] = Models::Flash.new
     end
