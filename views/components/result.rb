@@ -14,17 +14,24 @@ module Views
       #: -> void
       def view_template
         render Layout.new(flash: @flash) do
-          h2 { "Your shortened URL" }
+          div(style: "max-width: 600px; margin: 0 auto;") do
+            h2 { "Your shortened URL" }
+            div(style: "background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 5px; margin-bottom: 2rem;") do
+              a(href: shortened_url, style: "color: #4a9df8; font-size: 1.2rem; word-break: break-all;") do
+                shortened_url
+              end
+            end
 
-          url = shortened_url
-          a(href: url) { url }
+            h2 { "Original URL" }
+            div(style: "background: rgba(255,255,255,0.03); padding: 0.8rem; border-radius: 5px; margin-bottom: 2rem;") do
+              a(href: @url.original_url, style: "color: #aaa; word-break: break-all;") { @url.original_url }
+            end
 
-          h2 { "Original URL" }
-          a(href: @url.original_url) { @url.original_url }
-
-          div(style: "margin-top: 2rem;") do
-            form(action: "/", method: "get") do
-              input(type: "submit", value: "Shorten another URL?")
+            div(style: "margin-top: 2rem; text-align: center;") do
+              a(href: "/", role: "button",
+                style: "background-color: #CC342D; color: white; font-size: 1.1rem; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;") do
+                "Shorten another URL?"
+              end
             end
           end
         end
