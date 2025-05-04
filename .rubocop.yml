@@ -8,6 +8,15 @@ Lint/MissingSuper:
   AllowedParentClasses: [Phlex::HTML]
 
 ### Disabled ###
+Layout/EndAlignment:
+  Enabled: false
+
+Layout/ElseAlignment:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: false
+
 Layout/LineLength:
   Enabled: false
 

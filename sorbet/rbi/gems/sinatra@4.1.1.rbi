@@ -75,7 +75,7 @@ class Rack::CommonLogger
   def log(env, status, response_headers, began_at); end
 end
 
-# source://sinatra//lib/sinatra/main.rb#3
+# source://sinatra//lib/sinatra/indifferent_hash.rb#3
 module Sinatra
   class << self
     # Include the helper modules provided in Sinatra's request context.

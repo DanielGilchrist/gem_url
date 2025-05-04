@@ -1653,7 +1653,7 @@ class SQLite3::SQLException < ::SQLite3::Exception; end
 
 SQLite3::SQLITE_LOADED_VERSION = T.let(T.unsafe(nil), String)
 SQLite3::SQLITE_PACKAGED_LIBRARIES = T.let(T.unsafe(nil), TrueClass)
-SQLite3::SQLITE_PRECOMPILED_LIBRARIES = T.let(T.unsafe(nil), TrueClass)
+SQLite3::SQLITE_PRECOMPILED_LIBRARIES = T.let(T.unsafe(nil), FalseClass)
 SQLite3::SQLITE_VERSION = T.let(T.unsafe(nil), String)
 SQLite3::SQLITE_VERSION_NUMBER = T.let(T.unsafe(nil), Integer)
 

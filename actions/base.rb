@@ -14,14 +14,6 @@ module Actions
       redirect "/"
     end
 
-    #: (String url) -> bool
-    def valid_url?(url)
-      uri = URI.parse(url)
-      uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
-    rescue URI::InvalidURIError
-      false
-    end
-
     #: -> Models::Flash
     def flash
       session[:flash] ||= Models::Flash.new

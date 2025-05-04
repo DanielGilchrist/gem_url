@@ -1,11 +1,12 @@
 # typed: strict
 # frozen_string_literal: true
 
-require "sinatra"
-require "sqlite3"
+require "net/http"
 require "phlex"
 require "phlex-sinatra"
 require "securerandom"
+require "sinatra"
+require "sqlite3"
 require "uri"
 
 require_relative "actions/base"

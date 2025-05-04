@@ -4,7 +4,15 @@ GEM
     ast (2.4.3)
     base64 (0.2.0)
     benchmark (0.4.0)
+    debug (1.10.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
     erubi (1.13.1)
+    io-console (0.8.0)
+    irb (1.15.2)
+      pp (>= 0.6.0)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
     json (2.11.3)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
@@ -23,6 +31,9 @@ GEM
     phlex-sinatra (0.5.0)
       phlex (>= 2)
       sinatra
+    pp (0.6.2)
+      prettyprint
+    prettyprint (0.2.0)
     prism (1.4.0)
     puma (6.6.0)
       nio4r (~> 2.0)
@@ -44,7 +55,10 @@ GEM
       sorbet-runtime (>= 0.5.9204)
     rbs (3.9.2)
       logger
+    rdoc (6.13.1)
     regexp_parser (2.10.0)
+    reline (0.6.1)
+      io-console (~> 0.5)
     rubocop (1.75.4)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -123,6 +137,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  debug
   phlex
   phlex-sinatra
   puma
