@@ -45,7 +45,7 @@ module Views
                 br
                 plain "→"
                 br
-                span(style: "color: #CC342D;") { "#{@base_url}/5CWCxebbd1" }
+                span(style: "color: #CC342D;") { "#{@base_url}/SU9Cj" }
               end
             end
           end
