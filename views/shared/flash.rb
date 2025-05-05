@@ -11,18 +11,11 @@ module Views
 
       #: -> void
       def view_template
-        return if @flash.empty?
+        flash_type = @flash.type
+        return unless flash_type
 
-        if (message = @flash.success)
-          div(class: "alert alert-success") do
-            message
-          end
-        end
-
-        if (message = @flash.failure)
-          div(class: "alert alert-info") do
-            message
-          end
+        div(class: "alert #{flash_type.css_class}") do
+          flash_type.message
         end
       end
     end

@@ -3,41 +3,22 @@
 
 module Models
   class Flash
+    #: Type?
+    attr_reader :type
+
     #: -> void
     def initialize
-      @message = nil #: String?
-      @kind = nil #: Symbol?
-    end
-
-    #: -> bool
-    def empty?
-      @message.blank?
-    end
-
-    #: -> String?
-    def success
-      return if @kind != :success
-
-      @message
+      @type = nil #: Type?
     end
 
     #: (String message) -> void
     def success=(message)
-      @message = message
-      @kind = :success
-    end
-
-    #: -> String?
-    def failure
-      return if @kind != :failure
-
-      @message
+      @type = Success.new(message)
     end
 
     #: (String message) -> void
     def failure=(message)
-      @message = message
-      @kind = :failure
+      @type = Failure.new(message)
     end
   end
 end

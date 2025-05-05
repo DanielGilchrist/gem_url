@@ -49,7 +49,7 @@ module Views
                   border-left: 4px solid #28a745;
                 }
 
-                .alert-error, .alert-info {
+                .alert-failure {
                   background-color: #f8d7da;
                   color: #721c24;
                   border-left: 4px solid #dc3545;
