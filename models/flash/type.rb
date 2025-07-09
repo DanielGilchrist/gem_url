@@ -15,7 +15,7 @@ module Models
 
       # @abstract
       #: -> String
-      def css_class; end
+      def css_class = raise("Abstract method called")
     end
   end
 end

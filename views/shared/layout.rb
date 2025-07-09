@@ -4,7 +4,7 @@
 module Views
   module Shared
     class Layout < Phlex::HTML
-      #: (Models::Flash flash, ?String title) -> void
+      #: (flash: Models::Flash, ?title: String) -> void
       def initialize(flash:, title: "GemURL")
         @title = title
         @flash = flash

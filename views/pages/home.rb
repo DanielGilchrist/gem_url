@@ -4,7 +4,7 @@
 module Views
   module Pages
     class Home < Phlex::HTML
-      #: (Models::Flash flash, String base_url) -> void
+      #: (flash: Models::Flash, base_url: String) -> void
       def initialize(flash:, base_url:)
         @flash = flash
         @base_url = base_url
