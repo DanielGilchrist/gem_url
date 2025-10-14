@@ -13,6 +13,12 @@ module Actions
 
       valid_url = ensure_valid_url(original_url)
 
+      # TODO: Don't expose any random error to frontend
+      if valid_url.is_a?(StandardError)
+        flash.failure = "WHOOPS: #{valid_url.inspect}"
+        return redirect_home
+      end
+
       if valid_url.nil?
         flash.failure = "#{original_url} is not a valid URL!"
         return redirect_home
@@ -27,7 +33,7 @@ module Actions
 
     private
 
-    #: (String url) -> String?
+    #: (String url) -> (String | StandardError)?
     def ensure_valid_url(url)
       http_url = if url.start_with?("http://", "https://")
         url
@@ -47,8 +53,8 @@ module Actions
         response = request.head(path)
         status = response.code.to_i
         parsed_url.to_s if status < 400
-      rescue StandardError # TODO: More specific rescue
-        nil
+      rescue StandardError => e # TODO: more specific error handling
+        e
       end
     end
 

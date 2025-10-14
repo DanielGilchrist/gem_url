@@ -1,6 +1,8 @@
 # typed: strict
 # frozen_string_literal: true
 
+# require "debug"
+
 require "net/http"
 require "phlex"
 require "phlex-sinatra"
