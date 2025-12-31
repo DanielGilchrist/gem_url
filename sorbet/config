@@ -3,3 +3,6 @@
 --ignore=tmp/
 --ignore=vendor/
 --enable-experimental-rbs-comments
+--suppress-payload-superclass-redefinition-for=RDoc::Markup::BlankLine
+--suppress-payload-superclass-redefinition-for=RDoc::Markup::Heading
+--suppress-payload-superclass-redefinition-for=RDoc::Markup::HardBreak
